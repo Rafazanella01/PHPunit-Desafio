@@ -8,6 +8,12 @@ use InvalidArgumentException;
 
 class MinhaClasseAvancadoTest extends TestCase
 {
+    // Soma
+    public function testSomaCorreta()
+    {
+        $classe = new MinhaClasseAvancado();
+        $this->assertEquals(10, $classe->soma(5,5));
+    }
 
     public function testSomaIvalidos()
     {
@@ -26,6 +32,14 @@ class MinhaClasseAvancadoTest extends TestCase
     {
         $classe = new MinhaClasseAvancado();
         $this->assertEquals(1.5, $classe->soma(1.5, 0));
+    }
+
+    // Subtração
+
+    public function testSubtacaoCorreta()
+    {
+        $classe = new MinhaClasseAvancado();
+        $this->assertEquals(0, $classe->subtracao(5,5));
     }
 
     public function testSubtrairInvalidos()
