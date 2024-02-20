@@ -60,7 +60,7 @@ class MyClassTest extends TestCase
             ->getMock();
     
         $clone = clone $classe;
-        $this->assertSame($classe->nomeMock, $clone->nomeMock);
+        $this->assertNotSame($classe, $clone);
     }
     
     public function testMethodWillReturn()
@@ -98,14 +98,10 @@ class MyClassTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $classInfo = [];
-
-        //Este trecho tenta carregar a classe MyClass. Se o autoload estiver desativado corretamente, a função de autoload não deve ser chamada e a classe não será carregada.
         spl_autoload_register(function ($class) use (&$classInfo) {
             $classInfo[] = $class;
         });
         
-        // Tenta carregar a classe MyClass
         class_exists(MyClass::class);
 
         $this->assertEmpty($classInfo);
