@@ -14,10 +14,11 @@ class MyClassTest extends TestCase
     {
             $classe = $this->getMockBuilder(MyClass::class)
             ->disableOriginalConstructor()
-            ->addMethods(['teste'])
+            ->addMethods(['Imply', 'Rafael'])
             ->getMock();
 
-            $this->assertTrue(method_exists($classe, 'teste'));
+            $this->assertTrue(method_exists($classe, 'Imply'));
+            $this->assertTrue(method_exists($classe, 'Rafael'));
     }
 
     public function testSetConstructorArgs()
