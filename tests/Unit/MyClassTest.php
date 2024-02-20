@@ -100,10 +100,12 @@ class MyClassTest extends TestCase
 
         $classInfo = [];
 
+        //Este trecho tenta carregar a classe MyClass. Se o autoload estiver desativado corretamente, a função de autoload não deve ser chamada e a classe não será carregada.
         spl_autoload_register(function ($class) use (&$classInfo) {
             $classInfo[] = $class;
         });
-
+        
+        // Tenta carregar a classe MyClass
         class_exists(MyClass::class);
 
         $this->assertEmpty($classInfo);
