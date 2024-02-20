@@ -10,155 +10,155 @@ class ListaNumericaTest extends TestCase
     // Testes do metodo somarElementos()
     public function testSomaListaVazia()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(0, $listaNumerica->somarElementos([]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(0, $lista->somarElementos([]));
     }
 
     public function testSomaPositivos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(6, $listaNumerica->somarElementos([1,2,3]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(6, $lista->somarElementos([1,2,3]));
     }
 
     public function testSomaNegativos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(-6, $listaNumerica->somarElementos([-1,-2,-3]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(-6, $lista->somarElementos([-1,-2,-3]));
     }
 
     public function testSomaMistos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(0, $listaNumerica->somarElementos([1,2,-3, 0]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(0, $lista->somarElementos([1,2,-3, 0]));
     }
 
     //Testes do metodo encontrarMaiorElemento()
     public function testEncontrarMaiorListaVazia()
     {
-        $listaNumerica = new ListaNumerica();
+        $lista = new ListaNumerica();
         $listaVazia = [];
-        $this->assertEquals($listaVazia, $listaNumerica->encontrarMaiorElemento([$listaVazia]));
+        $this->assertEquals($listaVazia, $lista->encontrarMaiorElemento([$listaVazia]));
     }
 
     public function testEncontrarMaiorListaUnicoElemento()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(16, $listaNumerica->encontrarMaiorElemento([16]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(16, $lista->encontrarMaiorElemento([16]));
     }
 
     public function testEncontrarMaiorListaPositivos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(10, $listaNumerica->encontrarMaiorElemento([8,9,10]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(10, $lista->encontrarMaiorElemento([8,9,10]));
     }
 
     public function testEncontrarMaiorListaNegativos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(-8, $listaNumerica->encontrarMaiorElemento([-8,-9,-10]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(-8, $lista->encontrarMaiorElemento([-8,-9,-10]));
     }
 
     public function testEncontrarMaiorListaMistos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(9, $listaNumerica->encontrarMaiorElemento([-8,9,-10,0]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(9, $lista->encontrarMaiorElemento([-8,9,-10,0]));
     }
 
     // Testes do metodo encontrarMenorElemento()
     public function testEncontrarMenorListaVazia()
     {
-        $listaNumerica = new ListaNumerica();
+        $lista = new ListaNumerica();
         $listaVazia = [];
-        $this->assertEquals($listaVazia, $listaNumerica->encontrarMenorElemento([$listaVazia]));
+        $this->assertEquals($listaVazia, $lista->encontrarMenorElemento([$listaVazia]));
     }
 
     public function testEncontrarMenorListaUnicoElemento()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(1, $listaNumerica->encontrarMenorElemento([1]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(1, $lista->encontrarMenorElemento([1]));
     }
 
     public function testEncontrarMenorListaPositivos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(8, $listaNumerica->encontrarMenorElemento([8,9,10]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(8, $lista->encontrarMenorElemento([8,9,10]));
     }
 
     public function testEncontrarMenorListaNegativos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(-10, $listaNumerica->encontrarMenorElemento([-8,-9,-10]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(-10, $lista->encontrarMenorElemento([-8,-9,-10]));
     }
 
     public function testEncontrarMenorListaMistos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals(-10, $listaNumerica->encontrarMenorElemento([-8,9,-10,0]));
+        $lista = new ListaNumerica();
+        $this->assertEquals(-10, $lista->encontrarMenorElemento([-8,9,-10,0]));
     }
 
     // Testes do metodo ordenarLista()
     public function testOrdenarListaVazia()
     {
-        $listaNumerica = new ListaNumerica();
+        $lista = new ListaNumerica();
         $listaVazia = [];
-        $ordenado = $listaNumerica->ordenarLista($listaVazia);
+        $ordenado = $lista->ordenarLista($listaVazia);
         $this->assertEquals($listaVazia, $ordenado);
     }
 
     public function testOrdenarListaUnicoElemento()
     {
-        $listaNumerica = new ListaNumerica();
+        $lista = new ListaNumerica();
         $esperado = [1];
-        $this->assertEquals($esperado, $listaNumerica->ordenarLista([1]));
+        $this->assertEquals($esperado, $lista->ordenarLista([1]));
     }
 
     public function testOrdenarListaPositivos()
     {
-        $listaNumerica = new ListaNumerica();
-        $lista = [8,9,10];
-        $ordenada = $listaNumerica->ordenarLista([10,9,8]);
-        $this->assertEquals($lista, $ordenada);
+        $lista = new ListaNumerica();
+        $listaEsperada = [8,9,10];
+        $ordenada = $lista->ordenarLista([10,9,8]);
+        $this->assertEquals($listaEsperada, $ordenada);
     }
 
     public function testOrdenarListaNegativos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals([-10,-9,-8], $listaNumerica->ordenarLista([-8,-9,-10]));
+        $lista = new ListaNumerica();
+        $this->assertEquals([-10,-9,-8], $lista->ordenarLista([-8,-9,-10]));
     }
 
     public function testOrdenarListaMistos()
     {
-        $listaNumerica = new ListaNumerica();
-        $this->assertEquals([-10,-8,0,9], $listaNumerica->ordenarLista([-8,9,-10,0]));
+        $lista = new ListaNumerica();
+        $this->assertEquals([-10,-8,0,9], $lista->ordenarLista([-8,9,-10,0]));
     }
 
     // Testes do metodo filtrarNumerosPares()
     public function testFiltrarListaVazia()
     {
-        $listaNumerica = new ListaNumerica();
+        $lista = new ListaNumerica();
         $listaVazia = [];
-        $ordenado = $listaNumerica->filtrarPares($listaVazia);
+        $ordenado = $lista->filtrarPares($listaVazia);
         $this->assertEquals($listaVazia, $ordenado);
     }
 
     public function testPares()
     {
-        $listaNumerica = new ListaNumerica();
+        $lista = new ListaNumerica();
         $listaPares = [2,4,8,16];
-        $this->assertEquals($listaPares, $listaNumerica->filtrarPares([2,4,8,16]));
+        $this->assertEquals($listaPares, $lista->filtrarPares([2,4,8,16]));
     }
 
     public function testNumerosImpares()
     {
-        $listaNumerica = new ListaNumerica();
+        $lista = new ListaNumerica();
         $listaPares = [3,5,9,17];
-        $this->assertEquals([], $listaNumerica->filtrarPares([3,5,9,17]));
+        $this->assertEquals([], $lista->filtrarPares([3,5,9,17]));
     }
 
     public function testNumerosMistos()
     {
-        $listaNumerica = new ListaNumerica();
-        $lista = [0,2,-4,8,9,11,13,16];
-        $this->assertEquals([0,2,-4,8,16], $listaNumerica->filtrarPares($lista));
+        $lista = new ListaNumerica();
+        $listaMista= [0,2,-4,8,9,11,13,16];
+        $this->assertEquals([0,2,-4,8,16], $lista->filtrarPares($listaMista));
     }
 }

@@ -13,7 +13,7 @@ class MinhaClasseAvancado extends Model
     public function soma($a, $b)
     {
         if (!is_numeric($a)||!is_numeric($b)){
-            throw new InvalidArgumentException("Para somar você precisa ser um número");
+            throw new InvalidArgumentException("Para somar você precisa inserir um número");
         }
 
         return $a + $b;
@@ -22,7 +22,7 @@ class MinhaClasseAvancado extends Model
     public function subtracao($a, $b)
     {
         if (!is_numeric($a)||!is_numeric($b)){
-            throw new InvalidArgumentException("Para subtrair você precisa ser um número");
+            throw new InvalidArgumentException("Para subtrair você precisa inserir um número");
         }
 
         return $a - $b;
